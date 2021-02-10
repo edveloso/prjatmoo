@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import br.edu.infnet.prjatmoo.controle.HomeCtrl;
 
-public class TelaHome {
+public class TelaHome implements Tela {
 
 	private int opcao;
 	private HomeCtrl homeCtrl= new HomeCtrl();

@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import br.edu.infnet.prjatmoo.controle.LoginCtrl;
 
-public class TelaLogin {
+public class TelaLogin implements Tela {
 	
 	private String conta;
 	private int pin;
