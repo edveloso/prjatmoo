@@ -17,5 +17,15 @@ public class Conta {
 		return saldo;
 	}
 	
+	public String getNumero() {
+		return this.numero;
+	}
+
+	public void depositar(double valor) {
+		this.saldo += valor;
+	}
+	
+	
+	
 
 }
