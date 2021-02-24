@@ -1,5 +1,8 @@
 package br.edu.infnet.prjatmoo.modelo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Conta {
 	
 	private String numero;
@@ -7,6 +10,8 @@ public class Conta {
 	private int pin;
 	
 	private double saldo;
+	
+	private List<Transacao> transacoes = new ArrayList<Transacao>();
 	
 	public Conta(String numero, int pin) {
 		this.numero = numero;
@@ -23,6 +28,10 @@ public class Conta {
 
 	public void depositar(double valor) {
 		this.saldo += valor;
+	}
+
+	public void saca(double valorSaque) {
+		this.saldo -= valorSaque;
 	}
 	
 	

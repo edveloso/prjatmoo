@@ -44,6 +44,29 @@ public class ContaService {
 		
 	}
 
+	public String saca(double valorSaque, String contaNumero) {
+		
+		Conta conta = null;
+		
+		List<Conta> collect = REPOSITORIO.stream()
+				.filter( c -> c.getNumero().equals(contaNumero) )
+				.collect(Collectors.toList());
+		
+		if(collect.size() == 0) {
+			conta = new Conta(contaNumero, 0);
+			REPOSITORIO.add(conta);
+		} else {
+			conta = collect.get(0);
+		}
+		
+		if(conta.getSaldo() >= valorSaque) {
+			conta.saca(valorSaque);
+			return "saque realizado com sucesso";
+		}
+		
+		return "saldo insuficiente";
+	}
+
 
 }
 

@@ -16,4 +16,9 @@ public class ContaCtrl {
 		contaService.deposita(contaNumero, valor);
 	}
 
+	public String saca(double valorSaque) {
+		String contaNumero = LoginCtrl.conta.getNumero();
+		return contaService.saca(valorSaque, contaNumero);
+	}
+
 }
