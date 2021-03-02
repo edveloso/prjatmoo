@@ -26,11 +26,5 @@ public class Transacao {
 	public Conta getConta() {
 		return conta;
 	}
-	
-	
-	
-	
-	
-	
 
 }

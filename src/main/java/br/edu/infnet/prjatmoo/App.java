@@ -6,8 +6,8 @@ import br.edu.infnet.prjatmoo.visao.TelaLogin;
  * 
  * 
  * 
- * Exercício para o dia 2/3
- * 
+Exercício para o dia 2/3
+ 
 2) Criem a funcionalidade para mostrar o 
 extrato com todas a transações financeiras por tipo e valor;
 

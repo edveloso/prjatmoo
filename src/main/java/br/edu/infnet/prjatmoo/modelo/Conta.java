@@ -33,8 +33,21 @@ public class Conta {
 	public void saca(double valorSaque) {
 		this.saldo -= valorSaque;
 	}
-	
-	
+
+	public List<Transacao> getTransacoes() {
+		return transacoes;
+	}
+
+	public void setTransacoes(List<Transacao> transacoes) {
+		this.transacoes = transacoes;
+	}
+
+	public void addTransacao(Transacao transacao) {
+		if(getTransacoes() == null) {
+			this.transacoes = new ArrayList<Transacao>();
+		}
+		getTransacoes().add(transacao);
+	}
 	
 
 }

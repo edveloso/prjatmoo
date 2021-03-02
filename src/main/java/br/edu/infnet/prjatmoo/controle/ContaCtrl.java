@@ -1,6 +1,9 @@
 package br.edu.infnet.prjatmoo.controle;
 
+import java.util.List;
+
 import br.edu.infnet.prjatmoo.modelo.ContaService;
+import br.edu.infnet.prjatmoo.modelo.Transacao;
 
 public class ContaCtrl {
 	
@@ -20,5 +23,12 @@ public class ContaCtrl {
 		String contaNumero = LoginCtrl.conta.getNumero();
 		return contaService.saca(valorSaque, contaNumero);
 	}
+
+	public List<Transacao> getExtrato() {
+		String contaNumero = LoginCtrl.conta.getNumero();
+		return contaService.getExtratoConta(contaNumero);
+	}
+	
+	
 
 }
