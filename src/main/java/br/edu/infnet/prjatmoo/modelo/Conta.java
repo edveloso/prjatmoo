@@ -48,6 +48,11 @@ public class Conta {
 		}
 		getTransacoes().add(transacao);
 	}
+
+	@Override
+	public String toString() {
+		return "Conta [numero=" + numero + ", pin=" + pin + ", saldo=" + saldo + ", transacoes=" + transacoes + "]";
+	}
 	
 
 }

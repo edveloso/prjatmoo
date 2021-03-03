@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class ContaService {
+import br.edu.infnet.prjatmoo.utils.SaldoInsuficienteException;
 
+public class ContaService {
+ 
 	private static List<Conta> REPOSITORIO = new ArrayList<Conta>();
 
 	public double getSaldoConta(String numerConta) {
@@ -43,13 +45,14 @@ public class ContaService {
 
 	}
 
-	public String saca(double valorSaque, String contaNumero) {
+	public String saca(double valorSaque, String contaNumero) throws SaldoInsuficienteException {
 
 		Conta conta = null;
 
 		List<Conta> collect = REPOSITORIO.stream().filter(c -> c.getNumero().equals(contaNumero))
 				.collect(Collectors.toList());
 
+		//
 		if (collect.size() == 0) {
 			conta = new Conta(contaNumero, 0);
 			REPOSITORIO.add(conta);
@@ -65,8 +68,8 @@ public class ContaService {
 			
 			return "saque realizado com sucesso";
 		}
-
-		return "saldo insuficiente";
+		
+		throw new SaldoInsuficienteException("Saldo insuficiente maluco");
 	}
 
 	public List<Transacao> getExtratoConta(String contaNumero) {
