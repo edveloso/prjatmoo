@@ -9,7 +9,6 @@ public class ContaServiceTest {
 
 	@Test
 	public void testGetSaldoContaComSucessoValorZero() {
-
 		// cria cenários
 		ContaService contaService = new ContaService();
 
